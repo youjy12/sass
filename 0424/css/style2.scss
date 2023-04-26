@@ -1,0 +1,164 @@
+//style2.scss
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+$bg_color: #ffff00;
+$bg_color1 : #f0f;
+$txt_color01: #ff0000;
+$txt_color02: #0000ff;
+$time: 0.5s;
+$tog_color01: #EF426F;
+
+
+@mixin h3txt{
+  font-family: "Noto Sans KR", "맑은 고딕", arial, sans-serif;
+  font-size: 30px;
+}
+
+.title01{
+  @include h3txt;
+  background: $bg_color;
+  color: $txt_color01;
+}
+.title02{
+  @include h3txt;
+  background: $bg_color;
+  color: $txt_color02;
+}
+
+//글자생략기호 나오게 하는 서식
+@mixin txt_over{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.p01{
+  @include txt_over;
+  width: 500px;
+  border: 1px solid #000;
+  background: $bg_color;
+}
+
+//글자, 모양, 배경
+
+//글자 서식
+@mixin btnFont{
+  font-family: "궁서체";
+  font-weight: bold;
+  font-size: 20px;
+}
+//버튼모양 서식
+@mixin btnArea{
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+@mixin btn{
+  @include btnFont;
+  @include btnArea;
+}
+.btn01{
+  @include btn;
+  background-color: $bg_color;
+}
+.btn02{
+  @include btn;
+  background-color: $bg_color1;
+}
+
+// 버튼에 마우스 오버시 적용할 믹스인함수
+@mixin btn_hover{
+  background: #000;
+  color: #fff;
+  transition: $time;
+}
+.btn01:hover, .btn02:hover{
+  @include btn_hover;
+}
+
+//토글버튼 서식
+@mixin tog_btn{
+  width: 40px;
+  height: 40px;
+  display: block;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  position: relative;
+}
+.toggle_btn{
+ @include tog_btn;
+}
+//토글 스팬 서식
+@mixin bar{
+  position: absolute;
+  display: inline-block;
+  width: 38px; left:1px;
+  height: 3px;
+  background: $tog_color01;
+  transition: $time;
+}
+.bar{ @include bar;}
+.bar1{top: 5px;}
+.bar2{top: 19px;}
+.bar3{bottom: 5px;}
+
+#toggle:checked + label > .bar1{transform:rotate(45deg) translate(10px, 10px);}
+#toggle:checked + label > .bar2{opacity: 0;}
+#toggle:checked + label > .bar3{transform: rotate(-45deg) translate(10px, -10px);}
+#toggle{display: none;}
+
+//4. mixin함수에 매개변수 삽입하기
+@mixin divBox($bgcolor){
+  @include btnFont;
+  background-color: $bgcolor;
+}
+#box01{
+  @include divBox(#8c8cc3);
+}
+#box02{
+  @include divBox(#f8c5ec);
+}
+
+// functioon print(a){
+//   document.write(a);
+// }
+// print('철수');
+
+//테이블 테두리 서식 기본값 넣기
+@mixin border($w, $s, $c){
+  width: 300px;
+  border: $w $s $c;
+}
+//테이블 서식 적용시 필요한 매개변수를 변경하여 넣을 수 있다.
+.border{
+  @include border(5px, double, $tog_color01);
+}
+//테이블 배경과 크기 서식
+@mixin table($t_bg: #f0f0f0){
+  background: $t_bg;
+  width: 500px;
+}
+@mixin caption($bg: #ffff00){
+  background: $bg;
+  padding: 10px 0px;
+  font-weight: bold;
+}
+
+table{
+  border-collapse: collapse;
+  @include table;
+}
+table caption {
+  @include caption;
+}
+table tr td{
+  line-height: 210%;
+  text-align: right;
+  padding-right: 20px;
+}
+@mixin odd_tr($bg: #fddc7a){
+  background: $bg;
+}
+table tbody tr:nth-child(2n+1){
+  @include odd_tr;
+}

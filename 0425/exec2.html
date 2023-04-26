@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0px;padding:0px;}
+    ul,ol,li{list-style:none;}
+    a{text-decoration:none;color:#333;}
+    .banner{
+      width: 800px;
+      height: 500px;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      margin : 0 auto;
+    }
+    .img_box{
+      width: 500px;
+      height: 500px;
+    }
+    .img_box > img{
+      width: 100%;
+    }
+    h2{
+      width: 100%;
+      text-align: center;
+      font-size: 32px;
+    }
+    .list li{
+      width: 300px;
+      height:100px;
+      text-decoration: none;
+      color: #333;
+      font-size: 12px;
+      line-height: 60px;
+      padding: 0 30px;
+      border: 2px solid #eee;
+      box-sizing: border-box;
+    }
+    .on{
+      border: 2px solid #ad42f4 !important;
+    }
+    
+
+  </style>
+
+</head>
+<body>
+  <article class="banner">
+    <h2>PROJECT</h2>
+    <div class="img_box">
+      <img src="./images/kuromi1.jpg" alt="" id="photo">
+    </div>
+    <ul class="list">
+      <li>반응형 웹</li>
+      <li>적응형 웹</li>
+      <li>쇼핑몰 사이트</li>
+      <li>LMS 웹사이트</li>
+      <li>리액트 웹사이트</li>
+    </ul>
+  </article>
+
+  <script>
+    let n = 1; //초기값
+    const list = document.querySelectorAll('.list > li');
+    list[0].style.background='#ad42f4';
+    list[0].style.fontWeight='bold';
+    
+    list.forEach((el, index) => {
+      el.onclick=()=>{
+        n = index+1; 
+        listChange();
+      }
+    });
+    function listChange(){
+      for(i=0;i<list.length;i++){
+        list[i].style.background='none';
+        list[i].style.fontWeight='normal';
+      }
+      list[n-1].style.background='#ad42f4';
+      list[n-1].style.fontWeight='bold';
+      document.getElementById('photo').src='./images/kuromi'+n+'.jpg'
+    }
+  </script>
+</body>
+</html>

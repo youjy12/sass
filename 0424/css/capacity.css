@@ -1,0 +1,178 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+#wrap {
+  margin: 0 auto;
+  padding: 50px;
+  font-family: "Noto Sans KR", "맑은 고딕", arial, sans-serif;
+  text-align: center;
+}
+
+h2 {
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  border-radius: 50px;
+  background: #e9e9e9;
+  margin-bottom: 10px;
+}
+
+#bar1 {
+  background-color: #ffdadf;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar2 {
+  background-color: #fec9c3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar3 {
+  background-color: #dcc2e0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar4 {
+  background-color: #c4e9e6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar5 {
+  background-color: #f9f3aa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar6 {
+  background-color: #c5eabb;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar7 {
+  background-color: #d3eeff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar8 {
+  background-color: #cdcff2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar9 {
+  background-color: #f7e8d4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar10 {
+  background-color: #febcc8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar11 {
+  background-color: #d1eaf7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar12 {
+  background-color: #c9ead8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+#bar13 {
+  background-color: #fcf6ca;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  border-radius: 50px;
+}
+
+li p {
+  color: #333;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 1;
+  line-height: 40px;
+}
+
+li span {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: #333;
+  background-color: #fff;
+  border: 3px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(-45deg, #e8bdd3 0%, #eebcb5 20%, #f0ebc9 40%, #cef2dc 60%, #c1eff3 80%, #cbdcf1 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  top: 0;
+  right: -10px;
+  z-index: 1;
+  font-size: 11px;
+  text-align: center;
+  line-height: 33px;
+  border-radius: 50px;
+  box-sizing: border-box;
+}/*# sourceMappingURL=capacity.css.map */

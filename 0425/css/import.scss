@@ -1,0 +1,9 @@
+//import.scss파일
+
+@import 'style';
+
+h2{
+  font-size: $bigFontSize;
+  color: $baseFontColor;
+  background: $bgcolor02;
+}

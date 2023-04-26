@@ -1,0 +1,57 @@
+@charset "utf-8";
+*{
+  margin: 0px; padding: 0px;
+}
+@mixin btn($type, $bgcolor, $sns:"none"){
+  width:300px;
+  height: 40px;
+  margin-right: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background-color: $bgcolor;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+    @if($type == "sns"){
+      &::before{
+        content: '';
+        display: block;
+        width: 36px; height: 36px;
+        background: #fff;
+        background-image: url(../images/sns_icon.png);
+        background-repeat: no-repeat;
+        @if($sns == "naver"){
+          background-position: -418px -97px;
+          background-size: 700px;
+        }
+        @if($sns == "kakao"){
+          background-position: -84px -182px;
+        }
+      }
+    }
+  }
+  .sns_login{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .sns_login > h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #login_btn{
+    @include btn("btn", #D4262C);
+  }
+  #njoin_btn{
+    @include btn("sns", #47B748, "naver");
+  }
+  #kjoin_btn{
+    @include btn("sns", #FFE800, "kakao");
+  }

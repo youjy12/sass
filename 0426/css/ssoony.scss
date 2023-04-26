@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+*{margin: 0px; padding: 0px;}
+
+$break-tablet: 767px;
+$break-pc: 1024px;
+
+@mixin sementic($width: 100%, $height:123px, $bgColor: #93D3DD){
+  width: $width;
+  height: $height;
+  background-color: $bgColor;
+}
+@mixin box_list($w:280px, $h:270px, $bc: #F3A285){
+  width: $w;
+  height: $h;
+  background-color: $bc;
+}
+@mixin flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+//모바일
+@media (min-width:0px) and (max-width: $break-tablet){
+  #wrap{
+    width: 100%;
+    header{
+      @include sementic(100%, 80px);
+    }
+    #visual{
+      @include sementic(100%, 150px, #C1DB82);
+    }
+    #con01{
+      @include sementic(100%, 850px, none);
+      @include flex;
+      article{
+        @include box_list(100%);
+      }
+    }
+    #con02{
+      @include sementic(100%, 490px, none);
+      @include flex;
+      article{
+        @include box_list(100%, 150px, #C1DB82);
+      }      
+    }
+    footer{
+      @include sementic(100%, 110px, #F7E293);
+    }
+  }  
+}
+//태블릿
+@media (min-width: $break-tablet) and (max-width: $break-pc){
+  #wrap{
+    width: 100%;
+    header{
+      @include sementic();
+    }
+    #visual{
+      @include sementic(100%, 400px, #C1DB82);
+    }
+    #con01{
+      @include sementic(100%, 570px, none);
+      @include flex;
+      article:first-of-type, article:nth-of-type(2){
+        @include box_list(50%);
+      }
+      article:last-of-type{
+        @include box_list(100%);
+      }
+    }
+    #con02{
+      @include sementic(100%, 330px, none);
+      @include flex;
+      article:first-of-type, article:nth-of-type(2){
+        @include box_list(50%, 150px, #C1DB82);
+      }
+      article:last-of-type{
+        @include box_list(100%, 150px, #c1d882);
+      }      
+    }
+    footer{
+      @include sementic(100%, 110px, #F7E293);
+    }
+  }
+}
+
+//PC
+@media (min-width: $break-pc){
+  #wrap{
+    width: 1180px;
+    margin: 0 auto;
+    @include flex;
+    header{
+      @include sementic();
+    }
+    #visual{
+      @include sementic(1160px, 400px, #C1DB82);
+    }
+    #con01{
+      @include sementic(1160px, 290px, none);
+      @include flex;
+      article{
+        @include box_list();
+      }
+    }
+    #con02{
+      @include sementic(1160px, 170px, none);
+      @include flex;
+      article{
+        @include box_list(380px, 150px, #88C896);
+      }
+    }
+    footer{
+      @include sementic(100%, 110px, #F7E293);
+    }
+  }
+}
